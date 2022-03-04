@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const http = require("http");
-const port = 3100;
+const port = process.env.PORT || 3100;
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 
@@ -24,6 +24,6 @@ io.on("connection", (socket) => {
 });
 app.get("/", (req, res) => res.send("Hello World!"));
 
-server.listen(3100, () => {
+server.listen(process.env.PORT, () => {
   console.log("listening on port 3100");
 });
