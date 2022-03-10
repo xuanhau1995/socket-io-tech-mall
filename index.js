@@ -6,8 +6,10 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 
 const io = new Server(server, {
+    // origin: "https://tech-mall-frontend.vercel.app",
+
   cors: {
-    origin: "https://tech-mall-frontend.vercel.app",
+    origin: "*",
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
